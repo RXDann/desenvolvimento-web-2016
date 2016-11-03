@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -77,29 +77,29 @@
 							<p class="text-center text-muted">Preencha os campos abaixos que são obrigatórios para criação de um grupo acadêmico</p>
 							<hr>
 							
-							<form>
+							<form name="cadastrar" method= "POST" action="cadastrando.php">
 								<div class="top-margin">
 									<label>Nome do Grupo <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" name="grupo" placeholder="cienciataguatinga" class="form-control">
 								</div>
                                 <div class="top-margin">
 									<label>Nome do Curso <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" name="curso" placeholder="Ciência da Computação" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Senha:<span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
+									<input type="password" name="senha" placeholder="********" class="form-control">
 								</div>
                                 <div class="top-margin">
 									<label>Digite a senha novamente:<span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
+									<input type="password" name="confirmasenha" placeholder="********" class="form-control">
 								</div>
 
 								<hr>
 
 								<div class="row">
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Cadastrar!</button>
+										<button class="btn btn-action" type="submit"> <a href="cadastrando.php"> Cadastrar!</a></button>
 									</div>
 								</div>
 							</form>
