@@ -14,47 +14,42 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-	<!-- Custom styles for our template -->
 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
 	<link rel="stylesheet" href="assets/css/main.css">
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body>
 
-	<!-- Fixed navbar -->
+<!-- Menu superior -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
-				<!-- Button for smallest screens -->
+				
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<!-- logo do site -->
                 <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
-                
+                 <!-- logo do site -->
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="index.html">Página Inicial</a></li>
 					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                    <li><a href="entraGrupo.html">Entrar no Grupo</a></li>
-				
+                    <li><a class="btn" href="entraGrupo.html">Entrar no Grupo</a></li> 
+
 					
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div> 
-	<!-- /.navbar -->
+<!-- /.menu superior -->
+
     
     
     
 	<header id="head" class="secondary"></header>
-
-	<!-- container -->
+    
+<!-- Inicio da pagina criarGrupo-->
 	<div class="container">
 
 		<ol class="breadcrumb">
@@ -64,7 +59,7 @@
 
 		<div class="row">
 			
-			<!-- Article main content -->
+	
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">Agora que já possui um grupo criado, vamos inserir as credenciais abaixo para começar a utilizar o portal</h1>
@@ -77,7 +72,7 @@
 							<h3 class="thin text-center">Entrar no grupo</h3>
 							<p class="text-center text-muted">Preencha os campos abaixos com os dados do grupo criado</p>
 							<hr>
-							
+<!-- Inicio do formulario -->
 							<form>
 								<div class="top-margin">
 									<label>Nome do Grupo <span class="text-danger">*</span></label>
@@ -95,25 +90,25 @@
 										<b><a href="">Esqueceu a senha ?</a></b>
 									</div>
 									<div class="col-lg-4 text-right">
-                                       <a href="Grupo.html" class="btn btn-action"><i class="icon-trash"></i>Logar</a>
-                                    	<!-- 
-                                        <button class="btn btn-action" type="submit" value="pesquisar"onClick="window.open('Grupo.html')" >Logar!</button>
-                                         -->      
+                                       <a href="Grupo.php" class="btn btn-action"><i class="icon-trash"></i>Logar</a>
+    
                                       
 									</div>
 								</div>
 							</form>
+<!-- Fim do formulario -->
 						</div>
 					</div>
 
 				</div>
 				
 			</article>
-			<!-- /Article -->
-
 		</div>
-	</div>	<!-- /container -->
+	</div>
+    
+ <!-- Fim da pagina criarGrupo-->
 	
+		<!-- Rodapé !-->
 		<div class="footer2">
 			<div class="container">
 				<div class="row">
@@ -121,18 +116,17 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Página Inicial</a> | 
-								<a href="about.html">Criar Grupo</a> |
-								<a href="sidebar-right.html">Entrar no grupo</a> |
-							
+								<a href="index.html">Página Inicial</a> | 
+								<a href="criaGrupo.html">Criar Grupo</a> |
+								<a href="entraGrupo.html">Entrar no grupo</a> |
+								
 							</p>
 						</div>
 					</div>
 </div>
-
-				</div> <!-- /row of widgets -->
 			</div>
 		</div>
+<!-- Rodapé!-->
 
 	</footer>	
 		

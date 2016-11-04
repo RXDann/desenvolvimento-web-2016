@@ -35,7 +35,7 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<!-- logo do site -->
                 <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
-               <!-- logo do site -->
+                
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
@@ -63,53 +63,69 @@
 		</ol>
 
 		<div class="row">
-			<h1>Adicionar Disciplina</h1>
+			<h1>Marcar Evento </h1>
+            <h4>Fixe as datas das suas provas, trabalhos e seminários </h4>
              <br><br>
+			
+
 		</div>
 	</div>	<!-- /container -->
 	
-<!-- /Inicio do Formulario para Digitar notas  -->
- <form class="form-horizontal">
+    <!-- /Inicio do Formulario para marcação do evento -->
+  <form class="form-horizontal" name="formulario" action="processa_eventos.php" method="post">
 <fieldset>
-
-<!-- Form Name -->
-
-<!-- Text input-->
+<!-- Text input Insere Data-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="adiciona_disciplina">Digite a disciplina: </label>  
+  <label class="col-md-4 control-label" for="Data">Data</label>  
   <div class="col-md-4">
-  <input id="adiciona_disciplina" name="adiciona_disciplina" type="text" placeholder="Adicionar a disciplina" class="form-control input-md">
-    
+  <input id="Data" name="data" type="Date" placeholder="dd/mm/aaaa" class="form-control input-md">
   </div>
 </div>
-
-<!-- Text input-->
+<!-- Text input Insere Data -->
+<!-- Select Basic Marca Evento -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="adicionar_semestre">Digite o semestre:</label>  
+  <label class="col-md-4 control-label" for="tipo_evento">Evento</label>
   <div class="col-md-4">
-  <input id="adicionar_semestre" name="adicionar_semestre" type="text" placeholder="Adicionar semestre" class="form-control input-md">
-    
+    <select id="tipo_evento" name="tipo_evento" class="form-control">
+      <option value="">--</option>
+      <option value="Projeto">Projeto</option>
+      <option value="Prova">Prova</option>
+      <option value="Seminario">Seminário</option>
+      <option value="Trabalho">Trabalho</option>
+      <option value="Visita tenica">Visita técnica</option>
+    </select>
   </div>
 </div>
+<!-- Select Basic Marca Evento -->
+
+
+<!-- Textarea Detalhes do Evento -->
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="inserir_texto"></label>
-  <div class="col-md-4">
-    <button id="inserir_texto" name="inserir_texto" class="btn btn-primary">Inserir</button>
+  <label class="col-md-4 control-label" for="Detalhes do Evento">Detalhes do Evento</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="Detalhes do Evento" name="detalhes_evento">Insira aqui detalhes do evento...</textarea>
   </div>
 </div>
-<!-- Botão Inserir-->
+<!-- Textarea Detalhes do Evento -->
+
+<!-- Button Marcar evento -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="marcar_evento">Confirmar evento </label>
+  <div class="col-md-4">
+    <button id="marcar_evento" name="marcar_evento" class="btn btn-primary" onClick="return validarselect()">Marcar </button>
+  </div>
+</div>
+<!-- Button Marcar evento -->
 </fieldset>
 </form>
-
+<!-- /Fim do Formulario -->
  <hr>
   <br>  <br>  <br>  <br>  <br>  <br>
-   
 <!-- Inicio do Rodapé -->
 		<div class="footer2">
 			<div class="container">
-				<div class="row">
-					
+				<div class="row">	
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
@@ -134,5 +150,28 @@
 	<script src="assets/js/headroom.min.js"></script>
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
+    
+<script language="javascript">
+
+//function validarselect(){
+
+//if(document.getElementById("tipo_evento").selectedIndex == ""){
+//window.alert("É obrigatório a escolha do evento.");
+//document.getElementById("tipo_evento").focus();
+//return false;
+//}
+ 
+ //if(document.getElementById("disciplina").selectedIndex == "" ){
+//window.alert("É obrigatório a escolha da disciplina.");
+//document.getElementById("disciplina").focus();
+//return false;
+//}
+ 
+ 
+//}
+
+</script>
+
+    
 </body>
 </html>

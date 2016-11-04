@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -26,35 +26,35 @@
 </head>
 
 <body>
-
-	<!-- Fixed navbar -->
+<!-- Menu superior -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
-				<!-- Button for smallest screens -->
+				
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<!-- logo do site -->
                 <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
-                
+                 <!-- logo do site -->
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="index.html">Página Inicial</a></li>
 					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                    <li><a href="entraGrupo.html">Entrar no Grupo</a></li>
+                    <li><a class="btn" href="entraGrupo.html">Entrar no Grupo</a></li> 
 
 					
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div> 
-	<!-- /.navbar -->
+<!-- /.menu superior -->
+
     
     
     
 	<header id="head" class="secondary"></header>
 
-	<!-- container -->
+<!-- Inicio da pagina criarGrupo-->
 	<div class="container">
 
 		<ol class="breadcrumb">
@@ -64,7 +64,7 @@
 
 		<div class="row">
 			
-			<!-- Article main content -->
+			
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">Vamos criar um grupo para começar a utilizar o website</h1>
@@ -76,45 +76,45 @@
 							<h3 class="thin text-center">Criar Grupo</h3>
 							<p class="text-center text-muted">Preencha os campos abaixos que são obrigatórios para criação de um grupo acadêmico</p>
 							<hr>
-							
-							<form name="cadastrar" method= "POST" action="cadastrando.php">
+<!-- Inicio do formulario -->	
+							<form>
 								<div class="top-margin">
 									<label>Nome do Grupo <span class="text-danger">*</span></label>
-									<input type="text" name="grupo" placeholder="cienciataguatinga" class="form-control">
+									<input type="text" class="form-control">
 								</div>
                                 <div class="top-margin">
 									<label>Nome do Curso <span class="text-danger">*</span></label>
-									<input type="text" name="curso" placeholder="Ciência da Computação" class="form-control">
+									<input type="text" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Senha:<span class="text-danger">*</span></label>
-									<input type="password" name="senha" placeholder="********" class="form-control">
+									<input type="password" class="form-control">
 								</div>
                                 <div class="top-margin">
 									<label>Digite a senha novamente:<span class="text-danger">*</span></label>
-									<input type="password" name="confirmasenha" placeholder="********" class="form-control">
+									<input type="password" class="form-control">
 								</div>
 
 								<hr>
 
 								<div class="row">
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit"> <a href="cadastrando.php"> Cadastrar!</a></button>
+										<button class="btn btn-action" type="submit">Cadastrar!</button>
 									</div>
 								</div>
 							</form>
+  <!-- Fim do formulario -->
 						</div>
 					</div>
 
 				</div>
 				
 			</article>
-			<!-- /Article -->
-
 		</div>
-	</div>	<!-- /container -->
+	</div>
+ <!-- Fim da pagina criarGrupo-->
 	
-		<!-- Rodapé !-->
+<!-- Rodapé !-->
 		<div class="footer2">
 			<div class="container">
 				<div class="row">
@@ -130,9 +130,6 @@
 						</div>
 					</div>
 </div>
-<!-- Rodapé
-					
-				</div> <!-- /row of widgets -->
 			</div>
 		</div>
 <!-- Rodapé!-->
@@ -142,7 +139,7 @@
 
 
 
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 	<script src="assets/js/headroom.min.js"></script>

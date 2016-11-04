@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -27,7 +28,7 @@
 
 <body>
 
-	<!-- Inicio da NavBar -->
+	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
@@ -35,7 +36,7 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<!-- logo do site -->
                 <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
-               <!-- logo do site -->
+                
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
@@ -45,13 +46,10 @@
 				
 					
 				</ul>
-			</div>
+			</div><!--/.nav-collapse -->
 		</div>
 	</div> 
-	<!-- Fim da NavBar -->
-    
-    
-    
+	<!-- /.navbar -->  
 	<header id="head" class="secondary"></header>
 
 	<!-- container -->
@@ -63,49 +61,112 @@
 		</ol>
 
 		<div class="row">
-			<h1>Adicionar Disciplina</h1>
-             <br><br>
+			<h1>Nome Curso | Nome Grupo </h1>
+			
+
 		</div>
 	</div>	<!-- /container -->
 	
-<!-- /Inicio do Formulario para Digitar notas  -->
- <form class="form-horizontal">
+    <!-- /Inicio do Formulario -->
+    
+<form class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
+<legend>     </legend>
 
-<!-- Text input-->
+
+
+
+<!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="adiciona_disciplina">Digite a disciplina: </label>  
-  <div class="col-md-4">
-  <input id="adiciona_disciplina" name="adiciona_disciplina" type="text" placeholder="Adicionar a disciplina" class="form-control input-md">
-    
+ 
+ <label class="col-md-4 control-label" for="selectbasic">Adicionar Disciplina :</label>
+
+ <div class="col-md-2">
+  <a href="insere_disciplina.html" class="btn btn-xs btn-default">Adicionar</a>
+  
+  
+  </div>
+  
+</div>
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Selecionar Disciplina :</label>
+  <div class="col-md-2">
+    <select id="selectbasic" name="selectbasic" class="form-control">
+      <option value="1">Desenvolvimento web</option>
+      <option value="2">Sistemas Operacionais</option>
+    </select>
   </div>
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="adicionar_semestre">Digite o semestre:</label>  
-  <div class="col-md-4">
-  <input id="adicionar_semestre" name="adicionar_semestre" type="text" placeholder="Adicionar semestre" class="form-control input-md">
-    
-  </div>
-</div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="inserir_texto"></label>
-  <div class="col-md-4">
-    <button id="inserir_texto" name="inserir_texto" class="btn btn-primary">Inserir</button>
+  <div class="form-group">
+  <label class="col-md-4 control-label" for="nota_aula"></label>
+       <div class="container">
+  <a href="insere_nota.html" class="btn btn-primary"><i class="icon-trash"></i>Inserir Nota </a> 
+   <a href="insere_arquivo.html" class="btn btn-primary"><i class="icon-trash"></i>Carregar Arquivo </a> 
+   <a href="marca_evento.php" class="btn btn-primary"><i class="icon-trash"></i>Marcar Evento</a> 
   </div>
 </div>
-<!-- Botão Inserir-->
+  
+  
+
+
 </fieldset>
 </form>
 
  <hr>
-  <br>  <br>  <br>  <br>  <br>  <br>
+  <br>  <br>  <br>  <br>  <br>  
+  <div id="apDiv1"></div>
+<br>
    
-<!-- Inicio do Rodapé -->
+     <!-- /Inicio do corpo das mensagens do formulario -->
+  
+ <style type="text/css">
+	#mural{
+		/*width:480px;
+		height:400px;
+		border:solid 1px;
+		border-radius:20px;
+		background:#FFDAB9;
+		padding:10px;
+		position:relative;
+		width:15%;
+		left:1600px; */
+		width:350px; /*Horizontal*/
+		height:480px; /*Vertical*/
+		border:solid 1px;
+		border-radius:20px;
+		background:#FFDAB9;
+		margin-bottom:20px;
+		margin-left:1450px;
+		margin-top:-60px;
+	}
+	</style>
+<div id="mural">
+ <center> <h3>Mural de Eventos </h3> </center>
+<?php
+                include("conexao.php");               
+                $query = "SELECT * FROM evento ORDER BY codigo DESC";
+                $resultado = mysql_query($query) or die(mysql_error());
+                while ($row = mysql_fetch_array($resultado)) {
+                    echo $row["evento_data"];
+                    echo "<br/>";
+                    echo $row["evento_tipo"];
+                    echo "<br/>";               
+                    echo "E-mail: <b>".$row["evento_detalhes"]."</b>";
+        
+					echo "<hr> </hr>";                         
+                }
+                mysql_close();
+ ?>
+</div>
+
+    <!-- /Fim do corpo das mensagens do formulario --> 
+ 
+    <!-- /Fim do formulario -->
 		<div class="footer2">
 			<div class="container">
 				<div class="row">
@@ -125,7 +186,7 @@
 				</div> <!-- /row of widgets -->
 			</div>
 		</div>
-<!-- Fim do Rodapé -->
+
 	</footer>	
 		
 
