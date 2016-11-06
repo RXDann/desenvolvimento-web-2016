@@ -1,140 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
-	<title>Logar no grupo </title>
-
-	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="assets/css/main.css">
-
-</head>
-
-<body>
-
-<!-- Menu superior -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
-		<div class="container">
-			<div class="navbar-header">
-				
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<!-- logo do site -->
-                <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
-                 <!-- logo do site -->
-			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="index.html">Página Inicial</a></li>
-					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                    <li><a class="btn" href="entraGrupo.html">Entrar no Grupo</a></li> 
-
-					
-				</ul>
-			</div>
-		</div>
-	</div> 
-<!-- /.menu superior -->
-
-    
-    
-    
-	<header id="head" class="secondary"></header>
-    
-<!-- Inicio da pagina criarGrupo-->
-	<div class="container">
-
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">User access</li>
-		</ol>
-
-		<div class="row">
-			
-	
-			<article class="col-xs-12 maincontent">
-				<header class="page-header">
-					<h1 class="page-title">Agora que já possui um grupo criado, vamos inserir as credenciais abaixo para começar a utilizar o portal</h1>
-                    
-				</header>
-				
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Entrar no grupo</h3>
-							<p class="text-center text-muted">Preencha os campos abaixos com os dados do grupo criado</p>
-							<hr>
-<!-- Inicio do formulario -->
-							<form>
-								<div class="top-margin">
-									<label>Nome do Grupo <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="top-margin">
-									<label>Senha:<span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
-								</div>
-
-								<br>
-
-								<div class="row">
-									<div class="col-lg-8">
-										<b><a href="">Esqueceu a senha ?</a></b>
-									</div>
-									<div class="col-lg-4 text-right">
-                                       <a href="Grupo.php" class="btn btn-action"><i class="icon-trash"></i>Logar</a>
-    
-                                      
-									</div>
-								</div>
-							</form>
-<!-- Fim do formulario -->
-						</div>
-					</div>
-
-				</div>
-				
-			</article>
-		</div>
-	</div>
-    
- <!-- Fim da pagina criarGrupo-->
-	
-		<!-- Rodapé !-->
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="simplenav">
-								<a href="index.html">Página Inicial</a> | 
-								<a href="criaGrupo.html">Criar Grupo</a> |
-								<a href="entraGrupo.html">Entrar no grupo</a> |
-								
-							</p>
-						</div>
-					</div>
-</div>
-			</div>
-		</div>
-<!-- Rodapé!-->
-
-	</footer>	
-		
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/headroom.min.js"></script>
-	<script src="assets/js/jQuery.headroom.min.js"></script>
-	<script src="assets/js/template.js"></script>
-</body>
-</html>
+﻿<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+ 	<meta name="description" content="">
+ 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+ 	
+ 	<title>Logar no grupo </title>
+ 
+ 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
+ 	
+ 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+ 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+ 
+ 	<!-- Custom styles for our template -->
+ 	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
+ 	<link rel="stylesheet" href="assets/css/main.css">
+ 
+ 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ 	<!--[if lt IE 9]>
+ 	<script src="assets/js/html5shiv.js"></script>
+ 	<script src="assets/js/respond.min.js"></script>
+ 	<![endif]-->
+ </head>
+ 
+ <body>
+ 
+ 	<!-- Fixed navbar -->
+ 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+ 		<div class="container">
+ 			<div class="navbar-header">
+ 				<!-- Button for smallest screens -->
+ 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+ 				<!-- logo do site -->
+                 <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
+                 
+ 			</div>
+ 			<div class="navbar-collapse collapse">
+ 				<ul class="nav navbar-nav pull-right">
+ 					<li class="active"><a href="index.html">Página Inicial</a></li>
+ 					<li><a href="criaGrupo.html">Criar Grupo</a></li>
+                     <li><a href="entraGrupo.html">Entrar no Grupo</a></li>
+ 				
+ 					
+ 				</ul>
+ 			</div><!--/.nav-collapse -->
+ 		</div>
+ 	</div> 
+ 	<!-- /.navbar -->
+     
+     
+     
+ 	<header id="head" class="secondary"></header>
+ 
+ 	<!-- container -->
+ 	<div class="container">
+ 
+ 		<ol class="breadcrumb">
+ 			<li><a href="index.html">Home</a></li>
+ 			<li class="active">User access</li>
+ 		</ol>
+ 
+ 		<div class="row">
+ 			
+ 			<!-- Article main content -->
+ 			<article class="col-xs-12 maincontent">
+ 				<header class="page-header">
+ 					<h1 class="page-title">Agora que já possui um grupo criado, vamos inserir as credenciais abaixo para começar a utilizar o portal</h1>
+                     
+ 				</header>
+ 				
+ 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+ 					<div class="panel panel-default">
+ 						<div class="panel-body">
+ 							<h3 class="thin text-center">Entrar no grupo</h3>
+ 							<p class="text-center text-muted">Preencha os campos abaixos com os dados do grupo criado</p>
+ 							<hr>
+ 							
+ 							<form name="login" method="post" action="autenticarTeste.php">
+ 								<div class="top-margin">
+ 									<label>Nome do Grupo <span class="text-danger">*</span></label>
+ 									<input type="text" name="user" class="form-control">
+ 								</div>
+ 								<div class="top-margin">
+ 									<label>Senha:<span class="text-danger">*</span></label>
+ 									<input type="password" name="pass" class="form-control">
+ 								</div>
+ 
+ 								<br>
+ 
+ 								<div class="row">
+ 									<div class="col-lg-8">
+ 										<b><a href="">Esqueceu a senha ?</a></b>
+ 									</div>
+ 									<div class="col-lg-4 text-right">
+                                                                     <input type="submit" class="btn btn-action" value="Entrar" name="submit"/>
+                                        <!-- Original 
+                                         <a href="autenticarTeste.php" class="btn btn-action"><i class="icon-trash"></i>Logar</a>
+                                         -->
+                                     	<!-- 
+                                         <button class="btn btn-action" type="submit" value="pesquisar"onClick="window.open('')" >Logar!</button>
+                                          -->      
+                                       
+ 									</div>
+ 								</div>
+ 							</form>
+ 						</div>
+ 					</div>
+ 
+ 				</div>
+ 				
+ 			</article>
+ 			<!-- /Article -->
+ 
+ 		</div>
+ 	</div>	<!-- /container -->
+ 	
+ 		<div class="footer2">
+ 			<div class="container">
+ 				<div class="row">
+ 					
+ 					<div class="col-md-6 widget">
+ 						<div class="widget-body">
+ 							<p class="simplenav">
+ 								<a href="#">Página Inicial</a> | 
+ 								<a href="about.html">Criar Grupo</a> |
+ 								<a href="sidebar-right.html">Entrar no grupo</a> |
+ 							
+ 							</p>
+ 						</div>
+ 					</div>
+ </div>
+ 
+ 				</div> <!-- /row of widgets -->
+ 			</div>
+ 		</div>
+ 
+ 	</footer>	
+ 		
+ 
+ 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+ 	<script src="assets/js/headroom.min.js"></script>
+ 	<script src="assets/js/jQuery.headroom.min.js"></script>
+ 	<script src="assets/js/template.js"></script>
+ </body>
+ </html>
