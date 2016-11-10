@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+		
+        <?php
+	
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $banco = "cadastro";
+        $conexao = @mysql_connect($host, $user, $pass) or die(mysql_error());
+        mysql_select_db($banco) or die(mysql_error());
+   
+        session_start();
+         
+        if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['pass']) == true)) {
+	  unset($_SESSION['user']);
+	  unset($_SESSION['pass']);
+	  header('location:entraGrupo.html');	
+        }
+?>
+	
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -41,7 +60,9 @@
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="index.html">Página Inicial</a></li>
 					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                    <li><a href="entraGrupo.html">Bem vindo ao grupo  >$nomeGrupo </a></li>
+                                    <li><a href="Grupo.php">Bem vindo ao grupo: <?php echo $_SESSION['user']; ?> </a></li>
+				
+					<li><a href="logout.php">Sair</a></li>
 				
 					
 				</ul>
