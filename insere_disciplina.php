@@ -1,25 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	
- <?php
-
-        $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $banco = "cadastro";
-        $conexao = @mysql_connect($host, $user, $pass) or die(mysql_error());
-        mysql_select_db($banco) or die(mysql_error());
-   
-        session_start();
-         
-        if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['pass']) == true)) {
-	  unset($_SESSION['user']);
-	  unset($_SESSION['pass']);
-	  header('location:entraGrupo.html');	
-        }
-?>
-	
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
@@ -63,8 +44,7 @@ include ("conexao.php");
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="index.html">Página Inicial</a></li>
 					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                                        <li><a href="Grupo.php">Bem vindo ao grupo: <?php echo $_SESSION['user']; ?> </a></li>
-                                        <li><a href="logout.php">Sair</a></li>
+                    <li><a href="entraGrupo.html">Bem vindo ao grupo  >$nomeGrupo </a></li>
 				
 					
 				</ul>
@@ -91,8 +71,8 @@ include ("conexao.php");
 		</div>
 	</div>	<!-- /container -->
 	
-
-<form class="form-horizontal" method="POST" action="inserir_disciplina.php">
+<!-- /Inicio do Formulario para Digitar notas  -->
+ <form class="form-horizontal"  method="POST" action="inserir_disciplina.php">
 <fieldset>
 
 <!-- Form Name -->
@@ -102,12 +82,15 @@ include ("conexao.php");
   <label class="col-md-4 control-label" for="adiciona_disciplina">Digite a disciplina: </label>  
   <div class="col-md-4">
   <input id="adiciona_disciplina" name="adiciona_disciplina" type="text" placeholder="Adicionar a disciplina" class="form-control input-md">
+    
   </div>
 </div>
+
 <div class="form-group">
   <label class="col-md-4 control-label" for="inserir_texto"></label>
   <div class="col-md-4">
-      <button type="submit" id="inserir_texto" name="inserir_texto" class="btn btn-primary">Inserir</button>
+    <button type="submit" id="inserir_texto" name="inserir_texto" class="btn btn-primary">Inserir</button>
+    <a href="Grupo.php" class="btn btn-primary"><i class="icon-trash"></i>Voltar</a> 
   </div>
 </div>
 <!-- Botão Inserir-->
