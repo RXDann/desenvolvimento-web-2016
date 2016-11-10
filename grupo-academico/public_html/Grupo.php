@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+	
+	<?php
+
+        $host = "localhost";
+        $user = "root";
+        $pass = "";
+        $banco = "cadastro";
+        $conexao = @mysql_connect($host, $user, $pass) or die(mysql_error());
+        mysql_select_db($banco) or die(mysql_error());
+        
+	session_start();
+         
+        if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['pass']) == true)) {
+	  unset($_SESSION['user']);
+	  unset($_SESSION['pass']);
+	  header('location:entraGrupo.html');	
+        }
+    
+     $logado = $_SESSION['user'];
+     $curso = mysql_query("SELECT curso FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+             
+     ?>
 <head>
 
 	<meta charset="utf-8">
@@ -42,7 +64,9 @@
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="index.html">Página Inicial</a></li>
 					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                    <li><a href="entraGrupo.html">Bem vindo ao grupo  >$nomeGrupo </a></li>
+                    <li><a href="Grupo.php">Bem vindo ao grupo: <?php echo $_SESSION['user']; ?> </a></li>
+				
+					<li><a href="logout.php">Sair</a></li>
 				
 					
 				</ul>
@@ -61,7 +85,7 @@
 		</ol>
 
 		<div class="row">
-			<h1>Nome Curso | Nome Grupo </h1>
+			<h1> <?php echo mysql_result($curso, 0); ?>  | <?php echo $_SESSION['user']; ?> </h1>
 			
 
 		</div>
