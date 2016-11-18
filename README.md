@@ -1,6 +1,6 @@
 # desenvolvimento-web-2016
 
-Como usar o site – Passo a Passo
+COMO USAR O SITE - PASSO A PASSO
 
 Passo: 1
 O que? Criar um grupo (cadastrar).
