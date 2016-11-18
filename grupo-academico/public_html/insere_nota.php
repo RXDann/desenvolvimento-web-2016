@@ -90,7 +90,7 @@
 	</div>	<!-- /container -->
 	
 <!-- /Inicio do Formulario para Digitar notas  -->
- <form class="form-horizontal">
+ <form name="inserenota" class="form-horizontal" method="post" action="inserirNota.php">
 <fieldset>
 
 
