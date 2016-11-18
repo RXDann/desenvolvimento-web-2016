@@ -1,5 +1,19 @@
-<?php
+<html>
 
+<head>
+
+<meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
+        <title>Notas</title>
+	<script type="text/javascript">
+        function insere(){
+        setTimeout("window.location='insere_nota.php'", 1200);
+        }       
+        </script>
+
+</head>
+
+<body>
+<?php
        session_start();
          
         if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['pass']) == true)) {
@@ -18,33 +32,22 @@
         $logado = $_SESSION['user'];
         $idGrupo = mysql_query("SELECT id FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
         $id_grupo = mysql_result($idGrupo, 0);
-        
-
+	
         $identifica = filter_input(INPUT_POST, 'texto_opcional');
         $nota = filter_input(INPUT_POST, 'insere_nota');  
          
-         if ($nota == null){
-             echo "Nenhuma nota foi adicionada. <br> <br>";
-              
+         if ($nota == null || $identifica == null){
+             echo "<center><h3>Nenhuma nota foi adicionada. <br> Preencha todos os campos. </h3></center>";             
+             echo "<script>insere()</script>";  
         } 
          else {
               $sql = mysql_query("INSERT INTO inserenota (identifica,nota,id_grupo) VALUES ('$identifica','$nota','$id_grupo') ");
-              echo "Notas armazenadas com sucesso";
-             
-                 
+              echo "<center><h3>Nota armazenada com sucesso.</h3></center>";
+              echo "<script>insere()</script>";                             
         }    
 
-      echo "Notas Encontradas: <br>";
-      $sql = mysql_query("SELECT * FROM inserenota WHERE id_grupo = '$id_grupo' ") or die( mysql_error($conexao));
-      while($aux = mysql_fetch_assoc($sql)) { 
-        
-         echo "Nome:".$aux["identifica"]."<br>";
-         echo "Nota:".$aux["nota"]."<br>";
-         echo "ID da Nota:".$aux["id_nota"]."<br>";
-         echo "<br>";
-
-
-       }
-    
  ?>
+</body>
+</html>
+
 
