@@ -141,6 +141,37 @@
 </fieldset>
 </form>
 
+	
+<hr> <div style="letter-spacing: 2px;"><h2> Notas </h2></div> </hr>
+<?php
+     
+     $idGrupo = mysql_query("SELECT id FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+     $id_grupo = mysql_result($idGrupo, 0);
+     $sql = mysql_query("SELECT * FROM inserenota WHERE id_grupo = '$id_grupo' ") or die( mysql_error($conexao));
+
+    $tabela = '<table border="1">';//abre table
+    $tabela .='<thead>';//abre cabeçalho
+    $tabela .= '<tr>';//abre uma linha
+    $tabela .= '<th><h4>Autor</h4></th>'; // colunas do cabeçalho
+    $tabela .= '<th><h4><center>Nota</center></h4></th>';
+    $tabela .= '</tr>';//fecha linha
+    $tabela .='</thead>'; //fecha cabeçalho
+    $tabela .='<tbody>';//abre corpo da tabela
+    while($aux = mysql_fetch_assoc($sql)) {         
+    $tabela .= '<tr>'; // abre uma linha
+    $tabela .= '<td>'.$aux["identifica"].'</td>'; // coluna identifica
+    $tabela .= '<td>'.$aux["nota"].'</td>'; //coluna nota
+    $tabela .= '</tr>'; // fecha linha
+    }
+    $tabela .='</tbody>'; //fecha corpo
+    $tabela .= '</table>';//fecha tabela
+
+    echo $tabela; // imprime
+
+
+?>
+	
+	
  <hr>
   <br>  <br>  <br>  <br>  <br>  
   <div id="apDiv1"></div>
