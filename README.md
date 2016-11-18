@@ -3,9 +3,9 @@
 Como usar o site – Passo a Passo
 
 Passo: 1
-O que? Criar um grupo (cadastrar).\n
-Para que? Para cadastrar os seus dados afim de Entrar no grupo.\n
-Como? Na página inicial, clicar em "Criar Grupo" e preencher os dados solicitados - nome do grupo, nome do curso, senha e confirmação de senha. Em seguida, clicar em "Cadastrar".\n
+O que? Criar um grupo (cadastrar).
+Para que? Para cadastrar os seus dados afim de Entrar no grupo.
+Como? Na página inicial, clicar em "Criar Grupo" e preencher os dados solicitados - nome do grupo, nome do curso, senha e confirmação de senha. Em seguida, clicar em "Cadastrar".
 
 Passo: 2
 O que? Entrar no grupo (login).
