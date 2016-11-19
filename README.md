@@ -1,5 +1,18 @@
 # desenvolvimento-web-2016
 
+SOBRE O SITE
+
+Organize a sua vida acadêmica!
+
+O Grupo Acadêmico tem a função de coletar, organizar e anotar informações, guardar arquivos e as datas mais importantes para você! Tudo isso organizado por disciplina! Tudo isso em uma página só sua!
+
+Use o Grupo Acadêmico para guardar o que você quiser. Crie notas, guarde links de sites interessantes, faça upload de livros e documentos, agende as datas das suas provas.... Use-o para lembrar e consultar tudo isso depois.
+
+O visual limpo agiliza a navegação e facilita a criação de notas, upload de documentos e pesquisas. Para completar, o Grupo Acadêmico possui o Mural de Eventos destacando as datas mais importantes para você!
+
+O Grupo Acadêmico com certeza é a forma mais fácil para você manter organizado essas pequenas e grandes coisas que cercam a nossa vida acadêmica e que merecem ser lembradas. 
+
+
 COMO USAR O SITE - PASSO A PASSO
 
 Passo: 1
@@ -32,8 +45,6 @@ Passo: Livre, após concluir os passos 1, 2 e 3
 O que? Inserir arquivo.
 Para que? Para guardar os arquivos que você desejar.
 Como? Entrar no grupo. Clicar em "Inserir arquivo". Você será redirecionado para outra página. Nesta página, preencher o dado solicitado (opcional) e escolher o arquivo desejado. Em seguida, clicar em "Enviar".
-
-
 
 
 ANÁLISE DE TESTE O1
