@@ -1,0 +1,175 @@
+
+-- phpMyAdmin SQL Dump
+-- version 3.5.2.2
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: 19/11/2016 às 01:14:34
+-- Versão do Servidor: 10.0.20-MariaDB-log
+-- Versão do PHP: 5.2.17
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Banco de Dados: `u710511929_web`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `disciplina`
+--
+
+CREATE TABLE IF NOT EXISTS `disciplina` (
+  `codigo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `grupo_codigo` int(10) NOT NULL,
+  `disciplina` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `semestre` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `disciplina_FKIndex1` (`grupo_codigo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
+
+--
+-- Extraindo dados da tabela `disciplina`
+--
+
+INSERT INTO `disciplina` (`codigo`, `grupo_codigo`, `disciplina`, `semestre`) VALUES
+(13, 6, 'Teste do Caio', NULL),
+(14, 8, 'teste', NULL),
+(9, 5, 'Sistema Operacional', NULL),
+(10, 5, 'Sistema Operacional ', NULL),
+(11, 5, 'Sistema Operacional 3', NULL),
+(12, 5, 'Disciplina Teste Id 5', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `evento`
+--
+
+CREATE TABLE IF NOT EXISTS `evento` (
+  `codigo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `grupo_codigo` int(10) NOT NULL,
+  `date` date DEFAULT NULL,
+  `tipo` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `descricao` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `evento_id_fk` (`grupo_codigo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+
+--
+-- Extraindo dados da tabela `evento`
+--
+
+INSERT INTO `evento` (`codigo`, `grupo_codigo`, `date`, `tipo`, `descricao`) VALUES
+(9, 7, '2016-11-18', 'Prova', 'Frevo do Lucas'),
+(8, 6, '2016-11-18', 'Trabalho', 'Teste do Caio'),
+(7, 5, '2016-11-18', 'Trabalho', 'Teste2'),
+(6, 5, '2016-11-07', 'Trabalho', 'Teste');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `grupo`
+--
+
+CREATE TABLE IF NOT EXISTS `grupo` (
+  `codigo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `grupo` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `curso` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `senha` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `confirmasenha` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
+
+--
+-- Extraindo dados da tabela `grupo`
+--
+
+INSERT INTO `grupo` (`codigo`, `grupo`, `curso`, `senha`, `confirmasenha`) VALUES
+(9, 'Teste', 'Teste', '123', '123'),
+(8, 'rata', 'rata', '123', '123'),
+(7, 'rato', 'rato', '123', '123'),
+(5, 'TesteCaio', 'Desenvolvimento Web', '123', '123'),
+(6, 'lucas', 'santana', '123', '123');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `inserenota`
+--
+
+CREATE TABLE IF NOT EXISTS `inserenota` (
+  `id_nota` int(11) NOT NULL AUTO_INCREMENT,
+  `identifica` text COLLATE utf8_unicode_ci NOT NULL,
+  `nota` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `id_grupo` int(11) NOT NULL,
+  PRIMARY KEY (`id_nota`),
+  KEY `grupo_id_fk` (`id_grupo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
+
+--
+-- Extraindo dados da tabela `inserenota`
+--
+
+INSERT INTO `inserenota` (`id_nota`, `identifica`, `nota`, `id_grupo`) VALUES
+(25, 'lucas de Santana Silva', 'SS', 7),
+(24, 'Caio', 'Consegui', 5),
+(23, 'Caio', 'Leandro', 5),
+(22, 'Caio', 'teste2', 5),
+(21, 'Caio', 'teste nota oficial 1', 5),
+(26, 'rata', 'ratinha valente\r\n', 8),
+(27, 'lucas', 'SS', 8),
+(28, 'camundongo', 'MI', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `nota`
+--
+
+CREATE TABLE IF NOT EXISTS `nota` (
+  `codigo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `grupo_codigo` int(10) unsigned NOT NULL,
+  `autor` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `descricao` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `nota_FKIndex1` (`grupo_codigo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `upload`
+--
+
+CREATE TABLE IF NOT EXISTS `upload` (
+  `codigo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `grupo_codigo` int(10) NOT NULL,
+  `arquivo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tipo` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tamanho` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `descricao` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `grupo_codigo_upfk` (`grupo_codigo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `upload`
+--
+
+INSERT INTO `upload` (`codigo`, `grupo_codigo`, `arquivo`, `tipo`, `tamanho`, `descricao`) VALUES
+(1, 0, '20485-agenda.xlsx', 'application/vnd.openxmlformats-officedocument', '20.6298828125', 'teste'),
+(2, 5, '41831-renderizador.java', 'application/octet-stream', '51.81640625', ''),
+(3, 7, '82873-grupoacademico.sql', 'application/octet-stream', '1.9384765625', '');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
