@@ -47,40 +47,4 @@ Para que? Para guardar os arquivos que você desejar.
 Como? Entrar no grupo. Clicar em "Inserir arquivo". Você será redirecionado para outra página. Nesta página, preencher o dado solicitado (opcional) e escolher o arquivo desejado. Em seguida, clicar em "Enviar".
 
 
-ANÁLISE DE TESTE O1
-
-DATA: 15/11 (terça-feira)
-
-RESULTADOS:
-
-1)	Existe dois botões “Criar grupo” na página inicial: um no canto superior da tela e um no meio da tela. Somente o botão do canto superior da tela está funcionando.
-Solução: Excluir o botão do meio da tela ou colocá-lo para funcionar.
-
-2)	Existe dois botões “Entrar no grupo” na página inicial: um no canto superior da tela e um no meio da tela. Somente o botão do canto superior da tela está funcionando.
-Solução: Excluir o botão do meio da tela ou colocá-lo para funcionar.
-
-3)	O botão “Página inicial” do rodapé da página inicial não está funcionando:
-Solução: Colocar o botão para funcionar ou excluir todos os botões do rodapé: “Página Inicial”, “Criar Grupo” e “Entrar no Grupo”.
-
-4)	Ao clicar no botão “cadastrar” da página Criar Grupo, dá erro no redirecionamento da página.
-Solução: Redirecionar preferencialmente para dentro grupo ou redirecionar para a página inicial.
-
-5)	Ao entrar no grupo, o nome do grupo aparece no título no lugar do nome do curso.
-Solução: Colocar o nome do curso no título. Exemplo: NomeDoCurso | Nome do Grupo
-
-6)	Ao entrar no grupo o Mural de Eventos aparece preenchido com dados de outro grupo.
-
-7)	O botão “Adicionar Discilplina” não funciona, redireciona para uma página de erro.
-
-8)	Nome de duas disciplinas já aparecem cadastradas no grupo.
-Solução: Apagar essas disciplinas já cadastradas.
-
-9)	Inserir nota de aula não funciona.
-
-10)	Inserir arquivo não funciona.
-
-11)	Não aparece o nome da disciplina no mural de eventos.
-
-12)	Quando estou dentro do grupo o botão “Página inicial” não funciona.
-
 
