@@ -1,30 +1,26 @@
+<?php
+header("Content-Type: text/html; charset=ISO-8859-1", true);
+include "conexao.php";
+
+session_start();
+         
+      if((!isset ($_SESSION['grupo']) == true) and (!isset ($_SESSION['senha']) == true)) {
+	  unset($_SESSION['grupo']);
+	  unset($_SESSION['senha']);
+	  header('location:entraGrupo.php');	
+        }
+
+     $logado = $_SESSION['grupo'];
+     $pega_curso = $_SESSION['curso'];
+     $curso = mysql_query("SELECT curso FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-	
-	<?php
-
-        $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $banco = "cadastro";
-        $conexao = @mysql_connect($host, $user, $pass) or die(mysql_error());
-        mysql_select_db($banco) or die(mysql_error());
-        
-	session_start();
-         
-        if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['pass']) == true)) {
-	  unset($_SESSION['user']);
-	  unset($_SESSION['pass']);
-	  header('location:entraGrupo.html');	
-        }
-    
-     $logado = $_SESSION['user'];
-     $curso = mysql_query("SELECT curso FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
-             
-     ?>
 <head>
 
-	<meta charset="utf-8">
+	<meta charset="ISO-8859-1">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
@@ -50,43 +46,37 @@
 
 <body>
 
-	<!-- Fixed navbar -->
+<!-- Menu superior -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<!-- logo do site -->
-                <a class="navbar-brand" href="index.html"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
+                <a class="navbar-brand" href="index.php"><img src="assets/img-fonts/logo.png" alt="Progressus HTML5 template"></a>
                 
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="index.html">Página Inicial</a></li>
-					<li><a href="criaGrupo.html">Criar Grupo</a></li>
-                    <li><a href="Grupo.php">Bem vindo ao grupo: <?php echo $_SESSION['user']; ?> </a></li>
-				
-					<li><a href="logout.php">Sair</a></li>
-				
-					
+			<!-- 		<li class="active"><a href="#">PÃ¡gina Inicial</a></li>
+					<li><a href="criaGrupo.php">Criar Grupo</a></li> -->  
+              <!--      <li><a href="entraGrupo.html">Entrar no Grupo</a></li>      -->             
+					  <li><a href="Grupo.php"> Bem vindo ao grupo: <?php echo $_SESSION['grupo']; ?> </a></li>
+                    <li><a class="btn" href="logout.php"> Sair</a></li> 
 				</ul>
-			</div><!--/.nav-collapse -->
+			</div><
 		</div>
 	</div> 
-	<!-- /.navbar -->  
+<!-- /.menu superior -->
 	<header id="head" class="secondary"></header>
 
 	<!-- container -->
 	<div class="container">
 
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">User access</li>
-		</ol>
-
+		
 		<div class="row">
-			<h1> <?php echo mysql_result($curso, 0); ?>  | <?php echo $_SESSION['user']; ?> </h1>
-			
+			<h1> <?php echo mysql_result($curso, 0); ?>  | <?php echo $_SESSION['grupo']; ?> </h1> 
+			 <?php echo $pega_curso;?>
 
 		</div>
 	</div>	<!-- /container -->
@@ -108,30 +98,44 @@
  <label class="col-md-4 control-label" for="selectbasic">Adicionar Disciplina :</label>
 
  <div class="col-md-2">
-  <a href="insere_disciplina.html" class="btn btn-xs btn-default">Adicionar</a>
+  <a href="insere_disciplina.php" class="btn btn-xs btn-default">Adicionar</a>
   
   
   </div>
   
 </div>
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Selecionar Disciplina :</label>
-  <div class="col-md-2">
-    <select id="selectbasic" name="selectbasic" class="form-control">
-      <option value="1">Desenvolvimento web</option>
-      <option value="2">Sistemas Operacionais</option>
-    </select>
-  </div>
-</div>
+ <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="selectbasic">Selecionar Disciplina :</label>
+                    <div class="col-md-2">
+                     <select id="selectbasic" name="selectbasic" class="form-control">  
+                 <?php
+                   $idGrupo = mysql_query("SELECT codigo FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+                  $id_grupo = mysql_result($idGrupo, 0);
+                  $sql = mysql_query("SELECT * FROM disciplina WHERE grupo_codigo = '$id_grupo' ");
+                           
+                   while($aux = mysql_fetch_assoc($sql)) {
+					?>
+                    <option value="<?php echo $aux['disciplina'] ?>"><?php echo $aux['disciplina'] ?></option>
+                      <?php  
+                         }   
+                         ?>
+                        
+                        <!--//    <option value="1">Desenvolvimento web</option>-->
+                            <!--<option value="2">Sistemas Operacionais</option>-->
+                        </select>
+                    </div>
+                </div>
 
 
   <div class="form-group">
   <label class="col-md-4 control-label" for="nota_aula"></label>
        <div class="container">
-  <a href="insere_nota.html" class="btn btn-primary"><i class="icon-trash"></i>Inserir Nota </a> 
-   <a href="insere_arquivo.html" class="btn btn-primary"><i class="icon-trash"></i>Carregar Arquivo </a> 
+  <a href="insere_nota.php" class="btn btn-primary"><i class="icon-trash"></i>Inserir Nota </a> 
+   <a href="insere_arquivo.php" class="btn btn-primary"><i class="icon-trash"></i>Carregar arquivo </a> 
+   
    <a href="marca_evento.php" class="btn btn-primary"><i class="icon-trash"></i>Marcar Evento</a> 
+  
   </div>
 </div>
   
@@ -140,16 +144,44 @@
 
 </fieldset>
 </form>
+ <hr>
+  <br>  
+    <div class="container">
 
-	
-<hr> <div style="letter-spacing: 2px;"><h2> Notas </h2></div> </hr>
+    <?php
+//------------------------------INSERE ARQUIVO---------------------------
+ //$sql="SELECT * FROM upload";
+ //$result_set=mysql_query($sql);
+
+     $idGrupo = mysql_query("SELECT codigo FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+     $id_grupo = mysql_result($idGrupo, 0);
+     $sql = mysql_query("SELECT * FROM upload WHERE grupo_codigo = '$id_grupo' ");
+
+
+	while($aux = mysql_fetch_assoc($sql)) {
+  ?>
+        <tr>
+        <b>Nome:</b><td> <?php echo $aux['arquivo'] ?></td>
+        <br>
+        <b>Descricao:</b> <td> <?php echo $aux['descricao'] ?>  </td> 
+       
+        <br>
+        <td><a href="assets/arquivos/<?php echo $aux['arquivo'] ?>" target="_blank">Acessar Arquivo</a></td>
+        </tr>
+        
+        <hr width="75%">
+        <?php
+	}
+	 //------------------------------INSERE ARQUIVO---------------------------
+	?>
+		
 <?php
      
-     $idGrupo = mysql_query("SELECT id FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+     $idGrupo = mysql_query("SELECT codigo FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
      $id_grupo = mysql_result($idGrupo, 0);
-     $sql = mysql_query("SELECT * FROM inserenota WHERE id_grupo = '$id_grupo' ") or die( mysql_error($conexao));
+     $sql = mysql_query("SELECT * FROM inserenota WHERE id_grupo = '$id_grupo' ");
 
-    $tabela = '<table border="1">';//abre table
+    $tabela = '<table border="1" width=80% height=20%>';//abre table
     $tabela .='<thead>';//abre cabeçalho
     $tabela .= '<tr>';//abre uma linha
     $tabela .= '<th><h4>Autor</h4></th>'; // colunas do cabeçalho
@@ -170,55 +202,96 @@
 
 
 ?>
-	
-	
- <hr>
-  <br>  <br>  <br>  <br>  <br>  
+   
+   
+   
+   
+   
+   
+       </div>
+   
+   
+  </center>
   <div id="apDiv1"></div>
 <br>
    
      <!-- /Inicio do corpo das mensagens do formulario -->
   
- <style type="text/css">
-	#mural{
-		/*width:480px;
-		height:400px;
-		border:solid 1px;
-		border-radius:20px;
-		background:#FFDAB9;
-		padding:10px;
-		position:relative;
-		width:15%;
-		left:1600px;*/
-		
-		width:350px; 
-		height:400px; 
-		border:solid 1px;
-		border-radius:5%;
-		background:#FFDAB9;
-		padding:10px;
-		margin-bottom:-60px;
-		margin-left:73%;
-		margin-top:-2%;
-		
-	}
-	</style> 
+
 <div id="mural">
- <center> <h3> Mural de Eventos </h3> </center>
+ <center> <h3>Mural de Eventos </h3> </center>
 <?php
-                include("conexao.php");               
-                $query = "SELECT * FROM evento ORDER BY codigo DESC";
+
+   include("conexao.php");    
+   $idGrupo = mysql_query("SELECT codigo FROM grupo WHERE grupo = '$logado' ") or die(mysql_error());
+   $id_grupo = mysql_result($idGrupo, 0);
+
+
+   $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+    //seleciona todos os itens da tabela
+    $cmd = "SELECT * FROM evento WHERE grupo_codigo = '$id_grupo' ";
+    $produtos = mysql_query($cmd);
+   //conta o total de itens
+    $total = mysql_num_rows($produtos);
+    //seta a quantidade de itens por pÃ¡gina, neste caso, 2 itens
+    $registros = 2;
+   //calcula o nÃºmero de pÃ¡ginas arredondando o resultado para cima
+    $numPaginas = ceil($total/$registros);
+    //variavel para calcular o inÃ­cio da visualizaÃ§Ã£o com base na pÃ¡gina atual
+    $inicio = ($registros*$pagina)-$registros;
+   //seleciona os itens por pÃ¡gina
+    $cmd = "select * from evento WHERE grupo_codigo = '$id_grupo' ORDER BY codigo DESC limit $inicio,$registros";
+    $produtos = mysql_query($cmd);
+    $total = mysql_num_rows($produtos);
+  //exibe os produtos selecionados
+    while ($produto = mysql_fetch_array($produtos)) {
+       echo "<center>";
+					echo "**** Grupo AcadÃªmico ****";
+					echo "<br/>";
+					echo "**** Novo Evento ****";
+					echo "<br/>";
+					echo "Data: ";
+					echo date('d/m/Y',strtotime($produto['date']));
+                    echo "<br/>";
+					echo "Evento: ";
+                    echo $produto["tipo"];
+                    echo "<br/>";     
+					echo "Disciplina:";   
+					echo "<br/>";         
+                    echo "Detalhes: <b>".$produto["descricao"]."</b>";
+					echo "<hr> </hr>";         
+					echo "</center>";    
+    }
+ 
+    //exibe a paginaÃ§Ã£o
+    for($i = 1; $i < $numPaginas + 1; $i++) {
+        echo "<a href='Grupo.php?pagina=$i'>".$i."</a> ";
+    }
+   
+   
+             
+              /*  $query = "SELECT * FROM evento ORDER BY codigo ";
                 $resultado = mysql_query($query) or die(mysql_error());
                 while ($row = mysql_fetch_array($resultado)) {
-                    echo $row["evento_data"];
+				echo "<center>";
+					echo "**** Grupo AcadÃªmico ****";
+					echo "<br/>";
+					echo "**** Novo Evento ****";
+					echo "<br/>";
+					echo "Data: ";
+					echo date('d/m/Y',strtotime($row['evento_data']));
                     echo "<br/>";
+					echo "Evento: ";
                     echo $row["evento_tipo"];
                     echo "<br/>";               
-                    echo "E-mail: <b>".$row["evento_detalhes"]."</b>";
-        
-					echo "<hr> </hr>";                         
+                    echo "Detalhes: <b>".$row["evento_detalhes"]."</b>";
+					echo "<hr> </hr>";         
+					echo "</center>";                
                 }
                 mysql_close();
+*/
+
+
  ?>
 </div>
 
@@ -232,9 +305,9 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Página Inicial</a> | 
-								<a href="about.html">Criar Grupo</a> |
-								<a href="sidebar-right.html">Entrar no grupo</a> |
+								<a href="index.php">Pagina Inicial</a> | 
+								<a href="criaGrupo.php">Criar Grupo</a> |
+								<a href="entraGrupo.php">Entrar no grupo</a> |
 								
 							</p>
 						</div>
@@ -253,5 +326,21 @@
 	<script src="assets/js/headroom.min.js"></script>
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
+     <style type="text/css">
+	#mural{
+		width:350px; /*Horizontal*/
+		height:480px; /*Vertical*/
+		border:solid 1px;
+		border-radius:20px;
+		background:#FFDAB9;
+		margin-bottom:20px;
+		margin-left:1500px;
+		margin-top:-400px;
+		
+	
+	}
+
+	</style>
 </body>
+</html>
 </html>
