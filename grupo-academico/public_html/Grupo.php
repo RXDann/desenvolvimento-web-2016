@@ -189,19 +189,22 @@
 		padding:10px;
 		position:relative;
 		width:15%;
-		left:1600px; */
-		width:350px; /*Horizontal*/
-		height:480px; /*Vertical*/
+		left:1600px;*/
+		
+		width:350px; 
+		height:400px; 
 		border:solid 1px;
-		border-radius:20px;
+		border-radius:5%;
 		background:#FFDAB9;
-		margin-bottom:20px;
-		margin-left:1450px;
-		margin-top:-60px;
+		padding:10px;
+		margin-bottom:-60px;
+		margin-left:73%;
+		margin-top:-2%;
+		
 	}
-	</style>
+	</style> 
 <div id="mural">
- <center> <h3>Mural de Eventos </h3> </center>
+ <center> <h3> Mural de Eventos </h3> </center>
 <?php
                 include("conexao.php");               
                 $query = "SELECT * FROM evento ORDER BY codigo DESC";
